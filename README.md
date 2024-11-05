@@ -5,37 +5,14 @@ hide:
 
 # PoC Load Testing
 
-[doc-website]: https://sommerfeld-io.github.io/poc-load-testing
-[github-repo]: https://github.com/sebastian-sommerfeld-io/poc-load-testing
 [file-issues]: https://github.com/sebastian-sommerfeld-io/poc-load-testing/issues
-[project-board]: https://github.com/orgs/sommerfeld-io/projects/1/views/17
 
-This project is a PoC Load Testing for creating new repositories with a pre-defined structure. This PoC Load Testing is relevant for [sommerfeld.io](https://github.com/sebastian-sommerfeld-io) projects.
-
-!!! warning "Todo - Remove if not needed"
-    Short introduction to the project, its goals, and objectives.
-
-- [Documentation Website][doc-website]
-- [Github Repository][github-repo]
-- [Where to file issues][file-issues]
-- [Project Board for Issues and Pull Requests][project-board]
-
-## Requirements and Features
-
-This section outlines the basic requirements and features of the project. These requirements serve as a guideline for the development of the application and provide a clear overview of the expected functionality.
-
-!!! warning "Todo - Remove if not needed"
-    Short description of the functional requirements, driving forces, extract (or abstract) of requirements. Maybe link to GitHub issues (which are written as user stories) or to link some BDD-style executable specifications.
+This project is a PoC for Load Testing with [Gatling](https://gatling.io).
 
 ## Usage
 
 !!! warning "Todo - Remove if not needed"
     The basic commands to get any response from the system. This could be a simple `docker run ...` command. Link to the [Getting started](https://sommerfeld-io.github.io/poc-load-testing/usage) guide for more detailed instructions.
-
-## Scope and Context
-
-!!! warning "Todo - Remove if not needed"
-    Who is the target audience of the software? Who are the stakeholders? Use a list when stakeholders are clearly identifiable. Otherwise write a short description (e.g. when stakeholders are possibly everybody because the software is offered as open source to the whole world). Scope and context delimits your system (i.e. your scope) from all its communication partners (neighboring systems and users, i.e. the context  of your system). It thereby specifies the external interfaces. If necessary, differentiate the business context (domain specific inputs and outputs) from the technical context (channels, protocols, hardware).
 
 ## Architecture Constraints
 
