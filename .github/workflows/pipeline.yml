@@ -104,6 +104,7 @@ jobs:
     needs: [
       'lint',
       'generate-docs',
+      'shellcheck',
     ]
     if: ${{ (github.actor != 'dependabot[bot]') && (github.ref == 'refs/heads/main') }}
     permissions:
