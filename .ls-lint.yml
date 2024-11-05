@@ -28,9 +28,6 @@ ignore:
   - .idea
   - .vscode
   - node_modules
-  - test/gatling/target
-  - test/gatling/node_modules
-  - target/docs/site
   - target
 
   # linter definitions etc.

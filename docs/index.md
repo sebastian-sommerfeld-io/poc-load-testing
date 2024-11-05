@@ -9,13 +9,24 @@ hide:
 
 This project is a PoC for Load Testing with [Gatling](https://gatling.io).
 
-## Usage
-
 Gatling provides a cloud-hosted web application <https://computer-database.gatling.io> for running sample simulations.
 
 Gatling test simulations are defined in the `src` directory. To maintain a simple setup, the [JavaScript version of Gatling](https://docs.gatling.io/tutorials/scripting-intro-js) is used.
 
-To run the tests, run `docker compose up` or `npx gatling run --simulation <the_simulation>` in the root directory of this project.
+## Usage
+
+Run either of the following commands from the project root to start the Gatling simulation:
+
+```bash
+docker compose up
+
+npx gatling run --simulation <the_simulation>
+```
+
+For instructions on writing Gatling simulations, refer to the Gatling documentation:
+
+- <https://docs.gatling.io/tutorials/scripting-intro-js>
+- <https://docs.gatling.io/tutorials/advanced>
 
 ## Contact
 

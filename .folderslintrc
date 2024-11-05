@@ -9,10 +9,13 @@
 
 		".vscode",
 
-		"test/gatling/**",
-
 		"docs",
-		"target/docs/site/**",
+
+		".gatling",
+		"src",
+		"resources",
+
+		"target/**",
 
 		"node_modules/**",
 		"public/**",

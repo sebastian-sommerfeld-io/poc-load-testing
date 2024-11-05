@@ -74,17 +74,45 @@ services:
       - 3080:8000
     tty: *tty
 
-  init:
-    container_name: ${COMPOSE_PROJECT_NAME}-init
-    image: node:22.11.0-alpine3.19
+  system-under-test:
+    container_name: ${COMPOSE_PROJECT_NAME}-system-under-test
+    image: springcommunity/spring-framework-petclinic:6.1.2
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      cleanup:
+        condition: service_completed_successfully
+      lint-yaml:
+        condition: service_completed_successfully
+      lint-workflows:
+        condition: service_completed_successfully
+      lint-filenames:
+        condition: service_completed_successfully
+      lint-folders:
+        condition: service_completed_successfully
+
+  gatling:
+    container_name: ${COMPOSE_PROJECT_NAME}-gatling
+    image: node:22.11.0-bookworm-slim
     volumes: *volumes
     working_dir: *default-workdir
     command:
-      - /bin/ash
+      - /bin/bash
       - -c
       - |
-        (
-          cd test/gatling || exit
-          npm install
-        )
-    user: 1000:1000
+        echo "[INFO] Install node modules"
+        npm install
+
+        echo "[INFO] Run Gatling simulation"
+        # npx gatling run --simulation computer-database
+        npx gatling run --simulation spring-petclinic
+
+        chown -R 1000:1000 target
+    depends_on:
+      system-under-test:
+        condition: service_healthy
