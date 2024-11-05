@@ -1,0 +1,22 @@
+{
+	"rules": [
+		".devcontainer",
+		".devcontainer/ops",
+		".devcontainer/ops/assets",
+
+		".github",
+		".github/workflows",
+
+		".vscode",
+
+		"docs",
+		"docs/_assets/**",
+		"docs/about/**",
+		"docs/usage/**",
+		"target/docs/site/**",
+
+		"node_modules/**",
+		"public/**",
+		"target/**"
+	]
+}
