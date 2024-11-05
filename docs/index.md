@@ -11,34 +11,11 @@ This project is a PoC for Load Testing with [Gatling](https://gatling.io).
 
 ## Usage
 
-!!! warning "Todo - Remove if not needed"
-    The basic commands to get any response from the system. This could be a simple `docker run ...` command. Link to the [Getting started](usage/index.md) guide for more detailed instructions.
+Gatling provides a cloud-hosted web application <https://computer-database.gatling.io> for running sample simulations.
 
-## Architecture Constraints
+Gatling test simulations are defined in the `src` directory. To maintain a simple setup, the [JavaScript version of Gatling](https://docs.gatling.io/tutorials/scripting-intro-js) is used.
 
-!!! warning "Todo - Remove if not needed"
-    Any requirement that constraints software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies. Only list constraints that are not covered in the [Development Guide](about/development-guide.md).
-
-## Building Block View
-
-!!! warning "Todo - Remove if not needed"
-    The building block view shows the components of the system and their relationships. It is a high-level view of the system architecture. Maybe think of C4 model diagrams. Do not write too much text here.
-
-```kroki-ditaa
-
-+--------+    +--------+
-|        |    |        |
-|  Web   |    |  API   |
-|        |    |        |
-+--+-----+    +--+-----+
-   |             |
-   |             |
-+--+-----+    +--+-----+
-|        |    |        |
-|  DB    |    |  DB    |
-|        |    |        |
-+--------+    +--------+
-```
+To run the tests, run `docker compose up` or `npx gatling run --simulation <the_simulation>` in the root directory of this project.
 
 ## Contact
 

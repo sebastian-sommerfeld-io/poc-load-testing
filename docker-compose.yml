@@ -21,7 +21,6 @@ services:
     working_dir: &default-workdir /workspaces/poc-load-testing
     command: |
       rm -rf target
-      rm -rf target/docs/site
     tty: &tty true
 
   lint-yaml:
@@ -75,13 +74,17 @@ services:
       - 3080:8000
     tty: *tty
 
-  system-under-test:
-    container_name: ${COMPOSE_PROJECT_NAME}-system-under-test
-    image: springcommunity/spring-framework-petclinic:6.1.2
-    ports:
-      - 8080:8080
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+  init:
+    container_name: ${COMPOSE_PROJECT_NAME}-init
+    image: node:22.11.0-alpine3.19
+    volumes: *volumes
+    working_dir: *default-workdir
+    command:
+      - /bin/ash
+      - -c
+      - |
+        (
+          cd test/gatling || exit
+          npm install
+        )
+    user: 1000:1000

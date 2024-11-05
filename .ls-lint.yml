@@ -1,32 +1,20 @@
 ---
 ls:
-  .adoc: kebab-case | SCREAMING_SNAKE_CASE | PascalCase
   .puml: kebab-case
   .md: kebab-case | SCREAMING_SNAKE_CASE
 
   .conf: kebab-case
-  .go: snake_case
   .json: kebab-case
-  .rb: kebab-case
-  .tf: kebab-case
   .yml: kebab-case
   .yaml: kebab-case
-  .feature: kebab-case
 
-  .java: PascalCase
-  .kt: PascalCase
   .sh: kebab-case
 
-  .css: kebab-case
-  .html: kebab-case
   .js: kebab-case
-  .hbs: kebab-case
-  .svg: kebab-case
+  .gatling.js: kebab-case
 
   Dockerfile: PascalCase
-  Vagrantfile: PascalCase
 
-  .babelrc: lowercase
   .env: lowercase
   .dockerignore: lowercase
   .folderslintrc: lowercase
@@ -40,6 +28,8 @@ ignore:
   - .idea
   - .vscode
   - node_modules
+  - test/gatling/target
+  - test/gatling/node_modules
   - target/docs/site
   - target
 

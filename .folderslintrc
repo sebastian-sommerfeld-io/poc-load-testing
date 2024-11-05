@@ -9,6 +9,8 @@
 
 		".vscode",
 
+		"test/gatling/**",
+
 		"docs",
 		"target/docs/site/**",
 
