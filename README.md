@@ -3,14 +3,14 @@ hide:
   - navigation
 --- -->
 
-# Template Repository
+# PoC Load Testing
 
-[doc-website]: https://sommerfeld-io.github.io/template-repository
-[github-repo]: https://github.com/sommerfeld-io/template-repository
-[file-issues]: https://github.com/sommerfeld-io/template-repository/issues
+[doc-website]: https://sommerfeld-io.github.io/poc-load-testing
+[github-repo]: https://github.com/sebastian-sommerfeld-io/poc-load-testing
+[file-issues]: https://github.com/sebastian-sommerfeld-io/poc-load-testing/issues
 [project-board]: https://github.com/orgs/sommerfeld-io/projects/1/views/17
 
-This project is a template repository for creating new repositories with a pre-defined structure. This template repository is relevant for [sommerfeld.io](https://github.com/sommerfeld-io) projects.
+This project is a PoC Load Testing for creating new repositories with a pre-defined structure. This PoC Load Testing is relevant for [sommerfeld.io](https://github.com/sebastian-sommerfeld-io) projects.
 
 !!! warning "Todo - Remove if not needed"
     Short introduction to the project, its goals, and objectives.
@@ -30,7 +30,7 @@ This section outlines the basic requirements and features of the project. These 
 ## Usage
 
 !!! warning "Todo - Remove if not needed"
-    The basic commands to get any response from the system. This could be a simple `docker run ...` command. Link to the [Getting started](https://sommerfeld-io.github.io/template-repository/usage) guide for more detailed instructions.
+    The basic commands to get any response from the system. This could be a simple `docker run ...` command. Link to the [Getting started](https://sommerfeld-io.github.io/poc-load-testing/usage) guide for more detailed instructions.
 
 ## Scope and Context
 
@@ -40,7 +40,7 @@ This section outlines the basic requirements and features of the project. These 
 ## Architecture Constraints
 
 !!! warning "Todo - Remove if not needed"
-    Any requirement that constraints software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies. Only list constraints that are not covered in the [Development Guide](https://sommerfeld-io.github.io/template-repository/about/development-guide).
+    Any requirement that constraints software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies. Only list constraints that are not covered in the [Development Guide](https://sommerfeld-io.github.io/poc-load-testing/about/development-guide).
 
 ## Building Block View
 
