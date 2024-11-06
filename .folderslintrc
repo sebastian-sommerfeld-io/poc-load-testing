@@ -11,11 +11,9 @@
 
 		"docs",
 
-		".mvn",
 		".gatling",
-		"src/test/java/**",
-		"src/test/kotlin/**",
-		"src/test/resources",
+		"src",
+		"resources",
 
 		"target/**",
 

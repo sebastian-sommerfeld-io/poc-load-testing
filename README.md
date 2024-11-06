@@ -5,22 +5,27 @@ hide:
 
 # PoC Load Testing
 
-This project is a PoC for Load Testing with [Gatling](https://gatling.io).
-
 [file-issues]: https://github.com/sebastian-sommerfeld-io/poc-load-testing/issues
 
-This project is based on the [Kotlin template](https://github.com/gatling/gatling-maven-plugin-demo-kotlin) for Gatling simulations.io).
+This project is a PoC for Load Testing with [Gatling](https://gatling.io).
+
+Gatling provides a cloud-hosted web application <https://computer-database.gatling.io> for running sample simulations.
+
+Gatling test simulations are defined in the `src` directory. To maintain a simple setup, the [JavaScript version of Gatling](https://docs.gatling.io/tutorials/scripting-intro-js) is used.
 
 ## Usage
-When starting the gatling service, the System Under Test which is a dockerized [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) application will be started as well to run tests against locally.
+
+Run either of the following commands from the project root to start the Gatling simulation:
 
 ```bash
-docker compose up gatling
+docker compose up
+
+npx gatling run --simulation <the_simulation>
 ```
 
 For instructions on writing Gatling simulations, refer to the Gatling documentation:
 
-- <https://docs.gatling.io/tutorials/scripting-intro/>
+- <https://docs.gatling.io/tutorials/scripting-intro-js>
 - <https://docs.gatling.io/tutorials/advanced>
 
 ## Contact

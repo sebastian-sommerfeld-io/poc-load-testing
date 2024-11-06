@@ -8,10 +8,10 @@ ls:
   .yml: kebab-case
   .yaml: kebab-case
 
-  .xml: kebab-case
+  .sh: kebab-case
 
-  .java: PascalCase
-  .kt: PascalCase
+  .js: kebab-case
+  .gatling.js: kebab-case
 
   Dockerfile: PascalCase
 
