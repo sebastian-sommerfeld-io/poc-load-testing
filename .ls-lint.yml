@@ -31,6 +31,7 @@ ignore:
   - target
 
   # linter definitions etc.
+  - .editorconfig
   - .hadolint.yml
   - .ls-lint.yml
   - .markdownlint.yml

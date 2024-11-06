@@ -1,24 +1,18 @@
 {
-	"rules": [
-		".devcontainer",
-		".devcontainer/ops",
-		".devcontainer/ops/assets",
-
-		".github",
-		".github/workflows",
-
-		".vscode",
-
-		"docs",
-
-		".gatling",
-		"src",
-		"resources",
-
-		"target/**",
-
-		"node_modules/**",
-		"public/**",
-		"target/**"
-	]
+    "rules": [
+        ".devcontainer",
+        ".devcontainer/ops",
+        ".devcontainer/ops/assets",
+        ".github",
+        ".github/workflows",
+        ".vscode",
+        "docs",
+        ".gatling",
+        "src",
+        "resources",
+        "target/**",
+        "node_modules/**",
+        "public/**",
+        "target/**"
+    ]
 }

@@ -15,7 +15,9 @@ _bulb: **Info:** Use a job story when the focus is on the specific situation, al
 :zap: When _some situation_, I want to _do something_, so I can _achieve this outcome_.
 
 ### Acceptance Criteria (executable specification)
+
 :zap: Write the Acceptance Criteria ... The Scenarios names are pointing in the right direction, but are nowhere near ready for implementation.
+
 ```gherkin
 Feature: todo ...
 
@@ -31,12 +33,15 @@ Feature: todo ...
 ```
 
 ### Acceptance Criteria (additional / manual)
+
 :zap: Memo (remove when story is ready)
+
 - [ ] :zap: Translate the user story into executable specifications
     - :zap: If you cannot think about phrasing these tests, check if you really understand the problem
     - :zap: Use ubiquitous language based on the language of the problem domain
     - :zap: When a dedicated file from the code repository is used to define the acceptance criteria, do not repeat here. Just link to the proper definitions
 
 ### Post-Implementation Tasks (Examples)
+
 - [ ] :zap: Measure _related metric_ after implementation for _period of time_.
 - [ ] :zap: Track the reduction in _related metric_ related to the feature for _period of time_.

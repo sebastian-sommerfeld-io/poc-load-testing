@@ -16,15 +16,30 @@ const MINUTES = 60 * SECONDS
 const SIMULATION_RUNTIME = 10 * SECONDS
 
 
-// Define the HTTP protocol configuration, the base URL and the headers.
-function protocolConfig() {
-    const url = "http://system-under-test:8080" // TODO make dynamic somehow (env var and reading file seems to not work)
+/**
+ * Determine the URL of the system under test.
+ *
+ * TODO make dynamic somehow (env var and reading file seem to not work)
+ *
+ * @returns {string} the URL of the system under test
+ */
+function systemUnderTestUrl() {
+    const url = "http://system-under-test:8080"
 
     if (!url) {
         throw new Error("Cannot determine target system - BASE_URL environment variable seems to be missing")
     }
 
-    return http.baseUrl(url)
+    return url
+}
+
+
+/**
+ * Define the HTTP protocol configuration, the base URL and the headers.
+ * @returns {import("@gatling.io/http").ProtocolConfigBuilder} the protocol configuration
+ */
+function protocolConfig() {
+    return http.baseUrl(systemUnderTestUrl())
         .acceptHeader("text/html,application/xhtml+xml,application/xml")
         .acceptEncodingHeader("gzip, deflate")
         .acceptLanguageHeader("en-US,en;q=0.5")
@@ -32,8 +47,10 @@ function protocolConfig() {
 }
 
 
-// Define the scenario to be executed. The scenario represents a user journey
-// through the application.
+/**
+ * Define the scenario to be executed. The scenario represents a user journey through the application.
+ * @returns {import("@gatling.io/core").ScenarioBuilder} the scenario to navigate the app
+ */
 function navigateAppScenario() {
     return scenario("navigate app")
         .exec(http("get homepage")
@@ -55,8 +72,11 @@ function navigateAppScenario() {
 }
 
 
-// The simulation function defines the simulation to be executed. The simulation
-// is the entry point to the Gatling simulation and represents the load test.
+/**
+ * Define the simulation to be executed. The simulation is the entry point to the Gatling simulation and represents the load test.
+ *
+ * @param {import("@gatling.io/core").SetUpBuilder} setUp the setup configuration
+ */
 export default simulation((setUp) => {
     const scn = navigateAppScenario()
 
