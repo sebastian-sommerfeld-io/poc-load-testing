@@ -15,7 +15,7 @@ import java.time.Duration;
 public class SpringPetclinicTest extends Simulation {
 
     private static final Duration SIMULATION_RUNTIME = Duration.ofSeconds(20);
-    private static final String BASE_URL = "http://system-under-test:8080"; // TODO base url as parameter or env var
+    private static final String BASE_URL = "http://system-under-test:8080"; // TODO base url env var from docker-compose
 
     /**
      * Constructor. Define the scenario to be executed.
