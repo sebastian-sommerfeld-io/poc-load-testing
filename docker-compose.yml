@@ -87,20 +87,14 @@ services:
     depends_on:
       cleanup:
         condition: service_completed_successfully
-      lint-yaml:
-        condition: service_completed_successfully
-      lint-workflows:
-        condition: service_completed_successfully
-      lint-filenames:
-        condition: service_completed_successfully
-      lint-folders:
-        condition: service_completed_successfully
 
   gatling:
     container_name: ${COMPOSE_PROJECT_NAME}-gatling
     image: node:22.11.0-bookworm-slim
     volumes: *volumes
     working_dir: *default-workdir
+    environment:
+      SYSTEM_UNDER_TEST: http://system-under-test:8080
     command:
       - /bin/bash
       - -c
