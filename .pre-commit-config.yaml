@@ -24,6 +24,10 @@ repos:
       - id: detect-private-key
   - repo: local
     hooks:
+      - id: ktlint
+        name: ktlint
+        language: script
+        entry: /bin/bash -c 'ktlint --format'
       - id: lint-yaml
         name: lint-yaml
         language: script

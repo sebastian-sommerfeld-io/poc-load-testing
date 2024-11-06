@@ -10,15 +10,18 @@
         "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
         "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
     ],
-    "[markdown]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true
+    "[kotlin]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
     },
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
     "cSpell.words": [
         "javaapi",
         "petclinic"
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    ]
 }
