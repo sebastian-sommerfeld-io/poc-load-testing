@@ -8,6 +8,10 @@ import {
 import { http } from "@gatling.io/http";
 
 
+const SECONDS = 1;
+const MINUTES = 60 * SECONDS;
+
+
 export default simulation((setUp) => {
     const httpProtocol =
         http.baseUrl("http://system-under-test:8080")
@@ -19,27 +23,27 @@ export default simulation((setUp) => {
     const navigateAppScenario =
         exec(http("homepage")
             .get("/"))
-            .pause(5)
+            .pause(5 * SECONDS)
         .exec(http("find owners page")
             .get("/owners/find"))
-            .pause(8)
+            .pause(8 * SECONDS)
         .exec(http("owners results page")
             .get("/owners?lastName="))
-            .pause(12)
+            .pause(12 * SECONDS)
         .exec(http("owner details page")
             .get("/owners/7"))
         .exec(http("find veterinarians page")
             .get("/vets"))
-            .pause(5)
+            .pause(5 * SECONDS)
         .exec(http("view veterinarians as json")
             .get("/vets.json"))
-            .pause(20);
+            .pause(20 * SECONDS);
 
     const steadyLoad = scenario("steady load").exec(navigateAppScenario);
     const increasingLoad = scenario("increasing load").exec(navigateAppScenario);
 
     setUp(
-        steadyLoad.injectOpen(constantUsersPerSec(12).during(120)),
-        increasingLoad.injectOpen(rampUsers(10).during(30))
+        steadyLoad.injectOpen(constantUsersPerSec(15).during(120 * MINUTES)),
+        increasingLoad.injectOpen(rampUsers(15).during(120 * MINUTES))
     ).protocols(httpProtocol);
 });
