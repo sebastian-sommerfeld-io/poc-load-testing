@@ -57,6 +57,7 @@ services:
   docs-build:
     container_name: ${COMPOSE_PROJECT_NAME}-docs-build
     image: &docs-image sommerfeldio/mkdocs:latest
+    user: 1000:1000
     volumes: *volumes
     working_dir: *default-workdir
     command: build
@@ -90,23 +91,17 @@ services:
 
   gatling:
     container_name: ${COMPOSE_PROJECT_NAME}-gatling
-    image: node:22.11.0-bookworm-slim
-    volumes: *volumes
+    image: eclipse-temurin:23.0.1_11-jdk-noble # noble = ubuntu 24.04
+    user: 1000:1000
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - project-root-volume:/workspaces/poc-load-testing
+      - /home/vscode/.m2:/home/ubuntu/.m2
     working_dir: *default-workdir
     environment:
       SYSTEM_UNDER_TEST: http://system-under-test:8080
-    command:
-      - /bin/bash
-      - -c
-      - |
-        echo "[INFO] Install node modules"
-        npm install
-
-        echo "[INFO] Run Gatling simulation"
-        # npx gatling run --simulation computer-database
-        npx gatling run --simulation spring-petclinic
-
-        chown -R 1000:1000 target
+    command: ./mvnw gatling:test
     depends_on:
       system-under-test:
         condition: service_healthy

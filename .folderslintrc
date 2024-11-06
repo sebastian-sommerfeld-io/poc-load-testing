@@ -11,9 +11,10 @@
 
 		"docs",
 
+		".mvn",
 		".gatling",
-		"src",
-		"resources",
+		"src/test/java/**",
+		"src/test/resources",
 
 		"target/**",
 

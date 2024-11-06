@@ -15,5 +15,10 @@
         "editor.formatOnPaste": true
     },
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "cSpell.words": [
+        "javaapi",
+        "petclinic"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

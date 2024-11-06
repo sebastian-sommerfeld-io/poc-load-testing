@@ -9,16 +9,15 @@
             "settings": {},
             "extensions": [
                 "streetsidesoftware.code-spell-checker",
-                "asciidoctor.asciidoctor-vscode",
                 "ms-azuretools.vscode-docker",
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-maven",
                 "aaron-bond.better-comments",
                 "timonwong.shellcheck",
                 "jebbs.plantuml",
                 "github.vscode-github-actions",
                 "redhat.vscode-yaml",
                 "GitHub.copilot",
-                "golang.go",
-                "alexkrechik.cucumberautocomplete",
                 "DavidAnson.vscode-markdownlint"
             ]
         }
